@@ -42,15 +42,16 @@
                 <input name="city" type="text" class="form-control" id="inputAddress2" placeholder="Ciudad cliente">
             </div>
             <hr>
-            <div class="col-md-6">
+            <div class="col-12">
                 <label for="inputCity" class="form-label">País</label>
                 <input name="country" type="text" class="form-control" id="inputCity" placeholder="País cliente">
             </div>
             <hr>
-            <div class="col-md-6">
+            <div class="col-12">
                 <label for="inputCity" class="form-label">Teléfono</label>
                 <input name="number" type="text" class="form-control" id="inputCity" placeholder="Teléfono cliente">
             </div>
+            <hr>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Crear cliente</button>
             </div>

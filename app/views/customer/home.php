@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar bg-dark border-bottom border-body mb-2" data-bs-theme="dark">
         <div class="container-fluid">
             <span class="navbar-text">
                 <h1>Listado de clientes</h1>
@@ -18,6 +18,7 @@
         </div>
     </nav>
     <div class="container">
+        <p><a class="link-opacity-100-hover" href="<?=base_url()?>customer/addCustomer">Añadir cliente</a></p>
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -36,11 +37,11 @@
                         <td><?php echo $customer->created_at; ?></td>
                         <td><?php echo $customer->updated_at; ?></td>
                         <td>
-                            <a href="/" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="<?= base_url() ?>customer/edit/<?= $customer->customer_id ?>" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-pen-to-square"></i></a>
                             <span> | </span>
-                            <a href="/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-trash"></i></a>
+                            <a href="<?= base_url() ?>customer/delete/<?= $customer->customer_id ?>" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-trash"></i></a>
                             <span> | </span>
-                            <a href="<?=base_url()?>customer/show/<?=$customer->customer_id?>" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-eye"></i></a>
+                            <a href="<?= base_url() ?>customer/show/<?= $customer->customer_id ?>" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-eye"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
