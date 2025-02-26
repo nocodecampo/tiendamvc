@@ -8,5 +8,6 @@
 <body>
     <h1><?php echo $data['mensaje'] ?></h1>
     <a href="<?=base_url()?>login">Login</a>
+    <a href="<?=base_url()?>customer">Customer</a>
 </body>
 </html>

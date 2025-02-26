@@ -19,7 +19,7 @@ class Customer extends Model
     // Relación: Un cliente puede tener muchos teléfonos.
     public function phones()
     {
-        // Se asume que en la tabla address existe la columna 'customer_id' como clave foránea.
-        return $this->hasMany(Address::class, 'customer_id');
+        // Se asume que en la tabla phone existe la columna 'customer_id' como clave foránea.
+        return $this->hasMany(Phone::class, 'customer_id');
     }
 }

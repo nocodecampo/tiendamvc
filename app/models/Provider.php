@@ -20,6 +20,6 @@ class Provider extends Model
      public function phones()
      {
          // Se asume que en la tabla address existe la columna 'provider_id' como clave foránea.
-         return $this->hasMany(Address::class, 'provider_id');
+         return $this->hasMany(Phone::class, 'provider_id');
      }
 }
