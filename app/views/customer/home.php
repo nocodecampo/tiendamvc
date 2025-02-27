@@ -10,44 +10,62 @@
 </head>
 
 <body>
-    <nav class="navbar bg-dark border-bottom border-body mb-2" data-bs-theme="dark">
-        <div class="container-fluid">
-            <span class="navbar-text">
-                <h1>Listado de clientes</h1>
-            </span>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container">
-        <p><a class="link-opacity-100-hover" href="<?=base_url()?>customer/addCustomer">Añadir cliente</a></p>
-        <table class="table table-dark table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Cliente</th>
-                    <th scope="col">Fecha creación</th>
-                    <th scope="col">Última actualización</th>
-                    <th scope="col">Acciones</th>
-                </tr>
+      <h1 class="navbar-brand mb-0">Listado de Clientes</h1>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Enlace para añadir cliente -->
+    <div class="mb-3">
+      <a href="<?= base_url() ?>customer/addCustomer" class="btn btn-success">
+        <i class="fa-solid fa-plus"></i> Añadir Cliente
+      </a>
+    </div>
+
+    <!-- Card que contiene la tabla -->
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Fecha creación</th>
+                <th scope="col">Última actualización</th>
+                <th scope="col">Acciones</th>
+              </tr>
             </thead>
             <tbody>
-                <?php foreach ($data as $customer): ?>
-                    <tr>
-                        <th scope="row"><?php echo $customer->customer_id; ?></th>
-                        <td><?php echo $customer->name; ?></td>
-                        <td><?php echo $customer->created_at; ?></td>
-                        <td><?php echo $customer->updated_at; ?></td>
-                        <td>
-                            <a href="<?= base_url() ?>customer/edit/<?= $customer->customer_id ?>" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <span> | </span>
-                            <a href="<?= base_url() ?>customer/delete/<?= $customer->customer_id ?>" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-trash"></i></a>
-                            <span> | </span>
-                            <a href="<?= base_url() ?>customer/show/<?= $customer->customer_id ?>" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="fa-solid fa-eye"></i></a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
+              <?php foreach ($data as $customer): ?>
+                <tr>
+                  <th scope="row"><?= htmlspecialchars($customer->customer_id) ?></th>
+                  <td><?= htmlspecialchars($customer->name) ?></td>
+                  <td><?= htmlspecialchars($customer->created_at) ?></td>
+                  <td><?= htmlspecialchars($customer->updated_at) ?></td>
+                  <td>
+                    <a href="<?= base_url() ?>customer/edit/<?= $customer->customer_id ?>" class="btn btn-sm btn-warning">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a href="<?= base_url() ?>customer/delete/<?= $customer->customer_id ?>" class="btn btn-sm btn-danger">
+                      <i class="fa-solid fa-trash"></i>
+                    </a>
+                    <a href="<?= base_url() ?>customer/show/<?= $customer->customer_id ?>" class="btn btn-sm btn-info">
+                      <i class="fa-solid fa-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
             </tbody>
-        </table>
-    </div>
+          </table>
+        </div> <!-- table-responsive -->
+      </div> <!-- card-body -->
+    </div> <!-- card -->
+  </div> <!-- container -->
 </body>
 
 </html>

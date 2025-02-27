@@ -9,7 +9,7 @@ class AdminController extends Controller
     public function index(...$params)
     {
 
-        $data = ['mensaje' => '¡Bienvenido a la página de inicio!'];
+        $data = ['mensaje' => '¡Bienvenido a la página de administración!'];
         $this->view('home', $data);
     }
 }

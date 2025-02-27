@@ -9,4 +9,15 @@ class Product extends Model
     protected $table = "product";
     protected $primaryKey = 'product_id';
     protected $fillable = ['name', 'description', 'stock', 'price'];
+
+    // Relación: Un producto pertenece a una categoría.
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+    // Relación: Un producto pertenece a un proveedor.
+    public function provider()
+    {
+        return $this->belongsTo(Provider::class, 'provider_id');
+    }
 }

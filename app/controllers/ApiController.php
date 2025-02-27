@@ -52,10 +52,15 @@ class ApiController extends Controller
 
         // Intentar guardar el producto en la base de datos
         if ($product->save()) {
+            // Recuperar el listado actualizado de productos incluyendo las relaciones
+            $allProducts = Product::with(['category', 'provider'])
+                ->orderBy('created_at', 'desc')
+                ->limit(5)
+                ->get();
             header('Content-Type: application/json');
             echo json_encode([
-                'success' => true,
-                'product' => $product
+                'success'  => true,
+                'products' => $allProducts
             ]);
         } else {
             header('Content-Type: application/json');

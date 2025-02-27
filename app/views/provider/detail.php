@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle - Clientes</title>
+    <title>Detalle - Proveedores</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
@@ -13,7 +13,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark">
     <div class="container">
-      <h1 class="navbar-brand mb-0">Detalle de Cliente</h1>
+      <h1 class="navbar-brand mb-0">Detalle de Proveedor</h1>
     </div>
   </nav>
 
@@ -21,17 +21,18 @@
   <div class="container my-5">
     <div class="accordion" id="clienteAccordion">
       
-      <!-- Acordeón: Datos del Cliente -->
+      <!-- Acordeón: Datos del Proveedor -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingCliente">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="true" aria-controls="collapseCliente">
-            Cliente: <?= htmlspecialchars($data->name) ?>
+            Proveedor: <?= htmlspecialchars($data->name) ?>
           </button>
         </h2>
         <div id="collapseCliente" class="accordion-collapse collapse show" aria-labelledby="headingCliente" data-bs-parent="#clienteAccordion">
           <div class="accordion-body">
-            <!-- Aquí puedes agregar más información del cliente si lo deseas -->
+            <!-- Aquí puedes agregar más información del Proveedor si lo deseas -->
             <p><strong>Nombre:</strong> <?= htmlspecialchars($data->name) ?></p>
+            <p><strong>Web:</strong> <?= htmlspecialchars($data->web) ?></p>
           </div>
         </div>
       </div>
