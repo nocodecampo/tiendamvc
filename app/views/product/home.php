@@ -24,25 +24,25 @@
 
             <div class="col-12">
                 <label for="name" class="form-label">Nombre producto</label>
-                <input name="name" type="text" class="form-control" id="name" placeholder="Nombre producto">
+                <input name="name" type="text" class="form-control" id="name" placeholder="Nombre producto" required>
             </div>
             <hr>
             <div class="col-12">
                 <label for="description" class="form-label">Descripción</label>
-                <input name="description" type="text" class="form-control" id="description" placeholder="Descripción">
+                <input name="description" type="text" class="form-control" id="description" placeholder="Descripción" required>
             </div>
             <hr>
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="category">Categoría</label>
                     <select name="category" id="category">
-                        <option>Elige...</option>
+                        <option selected>Elige...</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label for="provider">Proveedor</label>
                     <select name="provider" id="provider">
-                        <option>Elige...</option>
+                        <option selected>Elige...</option>
                     </select>
                 </div>
             </div>
@@ -50,11 +50,11 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="stock" class="form-label">Stock</label>
-                    <input name="stock" type="number" min="0" class="form-control" id="stock" placeholder="0">
+                    <input name="stock" type="number" min="0" class="form-control" id="stock" placeholder="0" required>
                 </div>
                 <div class="col-md-6">
                     <label for="price" class="form-label">Precio</label>
-                    <input name="price" type="number" min="0" class="form-control" id="price" placeholder="0">
+                    <input name="price" type="number" min="0" step="0.01" class="form-control" id="price" placeholder="0" required>
                 </div>
             </div>
 

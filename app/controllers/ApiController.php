@@ -27,27 +27,29 @@ class ApiController extends Controller
         echo $json;
     }
 
-    public function product() {
+    public function new_product()
+    {
         // Leer el contenido de la petición (JSON)
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);
-    
+        error_log($input);
+
         // Verificar que se hayan recibido datos válidos
         if (!$data) {
             header('Content-Type: application/json');
             echo json_encode(['error' => 'No se recibieron datos válidos']);
             return;
         }
-    
+
         // Crear una nueva instancia del modelo Product y asignar los valores
         $product = new Product();
-        $product->name        = $data['name'] ?? '';
+        $product->name = $data['name'] ?? '';
         $product->description = $data['description'] ?? '';
-        $product->category    = $data['category'] ?? '';
-        $product->provider    = $data['provider'] ?? '';
-        $product->stock       = $data['stock'] ?? 0;
-        $product->price       = $data['price'] ?? 0;
-    
+        $product->category_id = $data['category'] ?? '';
+        $product->provider_id = $data['provider'] ?? '';
+        $product->stock = $data['stock'] ?? 0;
+        $product->price = $data['price'] ?? 0;
+
         // Intentar guardar el producto en la base de datos
         if ($product->save()) {
             header('Content-Type: application/json');

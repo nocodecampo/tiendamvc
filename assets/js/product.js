@@ -33,7 +33,7 @@ fetch(baseUrl+"api/categories")
     .catch(error => console.error('Error al obtener los proveedores:', error));
 
 
-    // -- //
+    // Envío de los datos a la BD por AJAX formato json
    const formulario = document.getElementById("form");
 
    formulario.addEventListener("submit", function(e){
@@ -47,9 +47,8 @@ fetch(baseUrl+"api/categories")
         'price': document.getElementById("price").value
     };
 
-
     // Envío de datos vía Ajax (fetch)
-    fetch(baseUrl+"api/product", {
+    fetch(baseUrl+"api/new_product", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
