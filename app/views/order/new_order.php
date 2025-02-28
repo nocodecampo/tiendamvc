@@ -14,7 +14,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark mb-4">
         <div class="container">
-            <h1 class="navbar-brand mb-0">Nueva Orden</h1>
+            <div style="display: flex; flex-direction:row; gap:8px; align-items:center;">
+                <a href="javascript:window.history.back();" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i></a>
+                <h1 class="navbar-brand mb-0">Nueva Orden</h1>
+            </div>
             <a href="<?= base_url() ?>admin" class="btn btn-secondary m-2">
                 <i class="fa-solid fa-arrow-left"></i> Volver a Admin
             </a>
@@ -123,6 +127,32 @@
                     if (priceInput) {
                         priceInput.value = price ? price : "";
                     }
+                }
+            }
+        });
+
+        // Validacion duplicados
+        document.getElementById("productsContainer").addEventListener("change", function(e) {
+            if (e.target && e.target.matches(".product-select")) {
+                // Obtén el producto seleccionado en el select que disparó el evento
+                const selectedProductId = e.target.value;
+
+                // Recorrer todos los selects de producto para verificar duplicados
+                const allSelects = document.querySelectorAll(".product-select");
+                let duplicateCount = 0;
+                allSelects.forEach(function(select) {
+                    if (select.value === selectedProductId && selectedProductId !== "") {
+                        duplicateCount++;
+                    }
+                });
+
+                // Si hay más de uno, mostrar alerta y limpiar el select duplicado
+                if (duplicateCount > 1) {
+                    alert("Este producto ya ha sido agregado. Por favor, selecciona otro producto o modifica la cantidad.");
+                    // Reiniciar el select que disparó el evento
+                    e.target.value = "";
+                    // También podrías enfocar el select para que el usuario elija nuevamente
+                    e.target.focus();
                 }
             }
         });

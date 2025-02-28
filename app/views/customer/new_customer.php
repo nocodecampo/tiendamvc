@@ -14,7 +14,11 @@
     <!-- Cabecera -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <h1 class="navbar-brand mb-0">Añadir nuevo cliente</h1>
+            <div style="display: flex; flex-direction:row; gap:8px; align-items:center;">
+                <a href="javascript:window.history.back();" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i></a>
+                <h1 class="navbar-brand mb-0">Añadir nuevo cliente</h1>
+            </div>
             <a href="<?= base_url() ?>admin" class="btn btn-secondary m-2">
                 <i class="fa-solid fa-arrow-left"></i> Volver a Admin
             </a>

@@ -23,33 +23,45 @@
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <!-- Bloque para Clientes -->
             <div class="col">
-                <div class="card text-center h-100">
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <a href="<?= base_url() ?>customer" class="stretched-link h3 text-decoration-none">Clientes</a>
+                <div class="card text-center h-100 bg-primary text-white">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <i class="fa-solid fa-user fa-3x mb-2"></i>
+                        <a href="<?= base_url() ?>customer" class="stretched-link h3 text-decoration-none text-white">
+                            Clientes
+                        </a>
                     </div>
                 </div>
             </div>
             <!-- Bloque para Productos -->
             <div class="col">
-                <div class="card text-center h-100">
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <a href="<?= base_url() ?>product" class="stretched-link h3 text-decoration-none">Productos</a>
+                <div class="card text-center h-100 bg-success text-white">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <i class="fa-solid fa-box-open fa-3x mb-2"></i>
+                        <a href="<?= base_url() ?>product" class="stretched-link h3 text-decoration-none text-white">
+                            Productos
+                        </a>
                     </div>
                 </div>
             </div>
             <!-- Bloque para Proveedores -->
             <div class="col">
-                <div class="card text-center h-100">
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <a href="<?= base_url() ?>provider" class="stretched-link h3 text-decoration-none">Proveedores</a>
+                <div class="card text-center h-100 bg-warning text-dark">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <i class="fa-solid fa-truck fa-3x mb-2"></i>
+                        <a href="<?= base_url() ?>provider" class="stretched-link h3 text-decoration-none text-dark">
+                            Proveedores
+                        </a>
                     </div>
                 </div>
             </div>
             <!-- Bloque para Ventas -->
             <div class="col">
-                <div class="card text-center h-100">
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <a href="<?= base_url() ?>order" class="stretched-link h3 text-decoration-none">Ventas</a>
+                <div class="card text-center h-100 bg-danger text-white">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <i class="fa-solid fa-chart-line fa-3x mb-2"></i>
+                        <a href="<?= base_url() ?>order" class="stretched-link h3 text-decoration-none text-white">
+                            Ventas
+                        </a>
                     </div>
                 </div>
             </div>

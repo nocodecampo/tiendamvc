@@ -14,7 +14,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark mb-4">
         <div class="container">
-            <h1 class="navbar-brand mb-0">Detalle de Orden</h1>
+        <div style="display: flex; flex-direction:row; gap:8px; align-items:center;">
+                <a href="javascript:window.history.back();" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i></a>
+                <h1 class="navbar-brand mb-0">Detalle de orden</h1>
+            </div>
             <a href="<?= base_url() ?>admin" class="btn btn-secondary m-2">
                 <i class="fa-solid fa-arrow-left"></i> Volver a Admin
             </a>
