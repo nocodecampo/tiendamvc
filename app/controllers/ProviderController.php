@@ -4,6 +4,7 @@ namespace Formacom\controllers;
 
 use Formacom\Core\Controller;
 use Formacom\Models\Provider;
+use Formacom\Models\Product;
 
 class ProviderController extends Controller
 {
@@ -91,8 +92,15 @@ class ProviderController extends Controller
         $provider = Provider::find($id);
 
         if (!$provider) {
-            // Si no se encuentra el proveedor, redirige o muestra un mensaje de error
-            header("Location: " . base_url() . "provider");
+            header("Location: " . base_url() . "provider?error=Proveedor no encontrado");
+            exit();
+        }
+
+        // Comprobación: Verifica si existen productos asociados al proveedor
+        $productCount = Product::where('provider_id', $id)->count();
+        if ($productCount > 0) {
+            // Redirige con un mensaje de error si hay productos asociados
+            header("Location: " . base_url() . "provider?error=No se puede eliminar el proveedor porque tiene productos asociados");
             exit();
         }
 
@@ -106,8 +114,8 @@ class ProviderController extends Controller
             $provider->delete();
         });
 
-        // Redirige a la lista de proveedores después de la eliminación
-        header("Location: " . base_url() . "provider");
+        // Redirige a la lista de proveedores tras la eliminación con un mensaje de éxito
+        header("Location: " . base_url() . "provider?message=Proveedor eliminado correctamente");
         exit();
     }
 }

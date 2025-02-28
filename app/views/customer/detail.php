@@ -14,6 +14,9 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container">
       <h1 class="navbar-brand mb-0">Detalle de Cliente</h1>
+      <a href="<?= base_url() ?>admin" class="btn btn-secondary m-2">
+        <i class="fa-solid fa-arrow-left"></i> Volver a Admin
+      </a>
     </div>
   </nav>
 

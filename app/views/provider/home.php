@@ -13,7 +13,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark mb-4">
         <div class="container">
-            <h1 class="navbar-brand mb-0">Listado de Clientes</h1>
+            <h1 class="navbar-brand mb-0">Listado de Proveedores</h1>
+            <a href="<?= base_url() ?>admin" class="btn btn-secondary m-2">
+                <i class="fa-solid fa-arrow-left"></i> Volver a Admin
+            </a>
         </div>
     </nav>
 
@@ -25,6 +28,16 @@
                 <i class="fa-solid fa-plus"></i> Añadir Proveedor
             </a>
         </div>
+
+        <!-- Mostrar mensaje de error si existe -->
+        <?php
+        $error = isset($_GET['error']) ? $_GET['error'] : '';
+        if ($error):
+        ?>
+            <div class="alert alert-danger" role="alert">
+                <?= htmlspecialchars($error) ?>
+            </div>
+        <?php endif; ?>
 
         <!-- Card que contiene la tabla -->
         <div class="card">

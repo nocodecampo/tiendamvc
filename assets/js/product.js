@@ -109,6 +109,16 @@ function updateProductList(products) {
       const tdPrice = document.createElement("td");
       tdPrice.textContent = product.price;
       row.appendChild(tdPrice);
+
+      // Celda para las acciones
+      const tdActions = document.createElement("td");
+      // Crea el enlace de "delete"
+      const deleteLink = document.createElement("a");
+      deleteLink.href = baseUrl + "product/delete/" + product.product_id;
+      deleteLink.classList.add("btn", "btn-sm", "btn-danger");
+      deleteLink.innerHTML = '<i class="fa-solid fa-trash"></i>';
+      tdActions.appendChild(deleteLink);
+      row.appendChild(tdActions);
       
       // Agrega la fila al <tbody>
       tbody.appendChild(row);
