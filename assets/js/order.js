@@ -74,3 +74,4 @@ document.getElementById("productsContainer").addEventListener("change", function
         }
     }
 });
+  

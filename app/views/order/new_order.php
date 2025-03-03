@@ -32,7 +32,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <!-- Formulario tradicional, sin AJAX -->
-                        <form action="<?= base_url() ?>order/store" method="post">
+                        <form  action="<?= base_url() ?>order/store" method="post">
                             <!-- Selección de cliente -->
                             <h3 class="mb-3"><i class="fa-solid fa-user"></i> Cliente</h3>
                             <div class="mb-3">
@@ -76,7 +76,7 @@
                                         <input name="products[0][price]" type="number" min="0" step="0.01" class="form-control product-price" readonly required>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-end">
-                                        <button type="button" class="btn btn-danger removeProductBtn"> 
+                                        <button type="button" class="btn btn-danger removeProductBtn">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </div>
@@ -100,10 +100,12 @@
     </div>
 
     <!-- Script para agregar filas dinámicamente -->
-     <script src="<?= base_url()?>assets/js/order.js"></script>
+    <script src="<?= base_url() ?>assets/js/order.js"></script>
+    <script src="<?= base_url() ?>assets/js/order_autosave.js"></script>
 
     <!-- Bootstrap JS Bundle (incluye Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
