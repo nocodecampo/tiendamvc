@@ -85,6 +85,7 @@
           <table class="table table-hover">
             <thead class="table-dark">
               <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Categoría</th>
@@ -97,6 +98,7 @@
             <tbody id="products">
               <?php foreach ($products as $product): ?>
                 <tr>
+                  <td><?= htmlspecialchars($product->product_id) ?></td>
                   <td><?= htmlspecialchars($product->name) ?></td>
                   <td><?= htmlspecialchars($product->description) ?></td>
                   <td><?= htmlspecialchars($product->category ? $product->category->name : '') ?></td>
@@ -112,6 +114,32 @@
               <?php endforeach; ?>
             </tbody>
           </table>
+
+          <nav aria-label="Paginación de productos">
+            <ul class="pagination justify-content-center">
+              <!-- Botón "Anterior" -->
+              <?php if ($currentPage > 1): ?>
+                <li class="page-item">
+                  <a class="page-link" href="<?= base_url() ?>product?page=<?= $currentPage - 1 ?>">Anterior</a>
+                </li>
+              <?php else: ?>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">Anterior</a>
+                </li>
+              <?php endif; ?>
+
+              <!-- Botón "Siguiente" -->
+              <?php if ($currentPage < $totalPages): ?>
+                <li class="page-item">
+                  <a class="page-link" href="<?= base_url() ?>product?page=<?= $currentPage + 1 ?>">Siguiente</a>
+                </li>
+              <?php else: ?>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">Siguiente</a>
+                </li>
+              <?php endif; ?>
+            </ul>
+          </nav>
         </div> <!-- table-responsive -->
       </div> <!-- card-body -->
     </div> <!-- card -->

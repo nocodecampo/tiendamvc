@@ -10,18 +10,32 @@ class ProductController extends Controller
 
     public function index(...$params)
     {
-        // Recupera todos los productos junto con sus relaciones 'category' y 'provider'
+        // Determina la página actual a partir del parámetro GET (por defecto 1)
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $perPage = 5;
+        $offset = ($page - 1) * $perPage;
+
+        // Recupera los productos con relaciones, ordenados por fecha de creación
         $products = Product::with(['category', 'provider'])
             ->orderBy('created_at', 'desc')
-            ->limit(5)
+            ->skip($offset)
+            ->take($perPage)
             ->get();
 
-        // Llama a la vista "home" (o la que definas) y le pasa los productos en un array asociativo
-        $this->view('home', ['products' => $products]);
+        // Calcula el total de páginas
+        $totalProducts = Product::count();
+        $totalPages = ceil($totalProducts / $perPage);
+
+        // Pasa a la vista: productos, página actual y total de páginas
+        $this->view('home', [
+            'products' => $products,
+            'currentPage' => $page,
+            'totalPages' => $totalPages
+        ]);
     }
 
 
-    // Método para borrar productos
+    // Método para ELIMINAR productos
     public function delete($id)
     {
         // Busca el producto por su ID

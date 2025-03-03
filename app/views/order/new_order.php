@@ -76,7 +76,7 @@
                                         <input name="products[0][price]" type="number" min="0" step="0.01" class="form-control product-price" readonly required>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-end">
-                                        <button type="button" class="btn btn-danger removeProductBtn">
+                                        <button type="button" class="btn btn-danger removeProductBtn"> 
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </div>
