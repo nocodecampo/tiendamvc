@@ -63,7 +63,7 @@
                                     <td><?= htmlspecialchars($provider->name) ?></td>
                                     <td><?= htmlspecialchars($provider->web) ?></td>
                                     <td>
-                                        <a href="<?= base_url() ?>customer/edit/<?= $provider->provider_id ?>" class="btn btn-sm btn-warning">
+                                        <a href="<?= base_url() ?>provider/edit/<?= $provider->provider_id ?>" class="btn btn-sm btn-warning">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
                                         <a href="<?= base_url() ?>provider/delete/<?= $provider->provider_id ?>" class="btn btn-sm btn-danger">

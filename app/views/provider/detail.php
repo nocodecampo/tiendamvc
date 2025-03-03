@@ -53,6 +53,12 @@
       </h2>
       <div id="collapseDirecciones" class="accordion-collapse collapse" aria-labelledby="headingDirecciones" data-bs-parent="#clienteAccordion">
         <div class="accordion-body">
+          <!-- Botón para agregar nueva dirección -->
+          <div class="mb-3">
+            <a href="<?= base_url() ?>provider/addAddress/<?= $data->provider_id ?>" class="btn btn-primary">
+              <i class="fa-solid fa-plus"></i> Nueva dirección
+            </a>
+          </div>
           <table class="table table-striped">
             <thead>
               <tr>
@@ -88,6 +94,12 @@
       </h2>
       <div id="collapseTelefonos" class="accordion-collapse collapse" aria-labelledby="headingTelefonos" data-bs-parent="#clienteAccordion">
         <div class="accordion-body">
+          <!-- Botón para agregar nuevo teléfono -->
+          <div class="mb-3">
+            <a href="<?= base_url() ?>provider/addPhone/<?= $data->provider_id ?>" class="btn btn-primary">
+              <i class="fa-solid fa-plus"></i> Nuevo teléfono
+            </a>
+          </div>
           <table class="table table-striped">
             <thead>
               <tr>

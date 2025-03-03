@@ -60,7 +60,7 @@
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <i class="fa-solid fa-chart-line fa-3x mb-2"></i>
                         <a href="<?= base_url() ?>order" class="stretched-link h3 text-decoration-none text-white">
-                            Ventas
+                            Pedidos
                         </a>
                     </div>
                 </div>
