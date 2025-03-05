@@ -15,7 +15,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container">
-      <a class="navbar-brand" href="<?= base_url() ?>">Mi Proyecto</a>
+      <a class="navbar-brand" href="<?= base_url() ?>">Proyecto Tienda</a>
     </div>
   </nav>
 
