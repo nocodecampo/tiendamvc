@@ -1,87 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-<section class="vh-100">
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-sm-6 col-lg-6 col-xl-5">
-        <img src="<?=base_url()?>assets/img/draw2.webp"
-          class="img-fluid" alt="Sample image">
-      </div>
-      <div class="col-sm-4 col-lg-6 col-xl-4 offset-xl-1">
-        <form action="<?=base_url()?>login/login" method="post">
-          <!-- Email input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <input required name="username" type="text" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a username" />
-            <label class="form-label" for="form3Example3">Username</label>
-          </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="<?= base_url() ?>">Mi Proyecto</a>
+    </div>
+  </nav>
 
-          <!-- Password input -->
-          <div data-mdb-input-init class="form-outline mb-3">
-            <input required name="password" type="password" id="form3Example4" class="form-control form-control-lg"
-              placeholder="Enter password" />
-            <label class="form-label" for="form3Example4">Password</label>
+  <!-- Contenedor principal para el login -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white text-center">
+            <h2>Login</h2>
           </div>
-
-          <div class="d-flex justify-content-between align-items-center">
-            <!-- Checkbox -->
-            <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
-                Remember me
-              </label>
+          <div class="card-body">
+            <form action="<?= base_url() ?>login/login" method="post">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input required name="username" type="text" id="username" class="form-control" placeholder="Ingrese su usuario">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input required name="password" type="password" id="password" class="form-control" placeholder="Ingrese su contraseña">
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                  <label class="form-check-label" for="remember">Recordarme</label>
+                </div>
+                <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+              </div>
+            </form>
+            <div class="mt-3 text-center">
+              <small>
+                ¿No tienes una cuenta? <a href="<?= base_url() ?>login/register" class="text-danger text-decoration-none">Regístrate</a>
+              </small>
+              <?php if (isset($data[0])): ?>
+                <div class="alert alert-danger mt-2" role="alert">
+                  <?= htmlspecialchars($data[0]) ?>
+                </div>
+              <?php endif; ?>
             </div>
-            <a href="#!" class="text-body">Forgot password?</a>
           </div>
-
-          <div class="text-center text-lg-start mt-4 pt-2">
-            <button   type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="<?=base_url()?>login/register"
-                class="link-danger">Register</a></p>
-                <p><?php 
-                if(isset($data[0])){echo $data[0];} 
-                ?></p>
-          </div>
-
-        </form>
+        </div>
+      </div>
+      <div class="col-md-5 d-none d-md-block">
+        <img src="<?= base_url() ?>assets/img/draw2.webp" alt="Imagen de Login" class="img-fluid">
       </div>
     </div>
   </div>
-  <div
-    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-    <!-- Copyright -->
-    <div class="text-white mb-3 mb-md-0">
-      Copyright © 2020. All rights reserved.
-    </div>
-    <!-- Copyright -->
 
-    <!-- Right -->
-    <div>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="#!" class="text-white">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-3 mt-4">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        &copy; <?= date("Y") ?> Mi Proyecto. Todos los derechos reservados.
+      </div>
+      <div>
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
-    <!-- Right -->
-  </div>
-</section>
+  </footer>
+
+  <!-- Bootstrap JS Bundle (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
