@@ -25,7 +25,7 @@
       <div class="col-md-5">
         <div class="card shadow-sm">
           <div class="card-header bg-primary text-white text-center">
-            <h2>Login</h2>
+            <h2>Inicia sesión</h2>
           </div>
           <div class="card-body">
             <form action="<?= base_url() ?>login/login" method="post">
